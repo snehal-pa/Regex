@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class Regex {
 
     static public void validatePhoneNumber() {
-        System.out.println("\nPhone numbers (only valid for 8,10,12 and 14 digits number)----------------------\n");
+        System.out.println("\nPhone numbers (valid for numbers having total digits from 7 - 14)----------------------\n");
 
         String[] phoneNumbers = {
                 "08-12 34 56",
@@ -22,9 +22,8 @@ public class Regex {
                 "0091-964533632767898",
                 "0091-94-26880777" // Indian number with country code(14 digits)
         };
-        // this regex is valid for 8,10,12 and 14 digits number
-        Pattern pattern = Pattern.compile("^(\\d[\\s-]?){10}$|^(\\d[\\s-]?){8}$|^(\\d[\\s-]?){12}$|^(\\d[\\s-]?){14}$");
-        // String pattern = "^(\\d[\\s-]?){10}$|^(\\d[\\s-]?){8}$";
+       // Pattern pattern = Pattern.compile("^(\\d[\\s-]?){10}$|^(\\d[\\s-]?){8}$|^(\\d[\\s-]?){12}$|^(\\d[\\s-]?){14}$");
+        Pattern pattern = Pattern.compile("^(\\d[\\s-]?){7,14}$");
 
         for (String s : phoneNumbers) {
             Matcher m = pattern.matcher(s);
