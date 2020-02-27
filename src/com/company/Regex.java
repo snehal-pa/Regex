@@ -28,7 +28,7 @@ public class Regex {
 
         for (String s : phoneNumbers) {
             Matcher m = pattern.matcher(s);
-            System.out.println(s + " ------ " + (m.matches() ? "valid" : "Invalid"));
+            System.out.println(s + " ------ " + (m.matches() ? "Valid" : "Invalid"));
 
         }
     }
@@ -47,7 +47,7 @@ public class Regex {
         Pattern pattern = Pattern.compile("^(.{2,})@(.{2,})\\.([A-Za-z]{2,})$");
         for (String s : email) {
             Matcher m = pattern.matcher(s);
-            System.out.println(s + " ------ " + (m.matches() ? "valid" : "Invalid"));
+            System.out.println(s + " ------ " + (m.matches() ? "Valid" : "Invalid"));
         }
     }
 
@@ -70,7 +70,7 @@ public class Regex {
 
         for (String s : birthdates) {
             Matcher m = pattern.matcher(s);
-            System.out.println(s + "------ " + (m.matches() ? "valid" : "Invalid"));
+            System.out.println(s + "------ " + (m.matches() ? "Valid" : "Invalid"));
         }
     }
 
