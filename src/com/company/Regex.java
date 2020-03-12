@@ -36,14 +36,17 @@ public class Regex {
         System.out.println("\nEmails----------------------------------------------------------------\n");
 
         String[] email = {
+                "Snehal_pa@gmail.com",
                 "snehal.patel@gmail.com",
                 "bhav.pa@axis.se",
                 "sneh@gmail.co.in",
                 "sl@st.eu",
-                "sneh.kath@hotmail.c"
+                "sneh.kath@hotmail.c",
+                "bhö#% av.pa@axis.se",
+                "bhö av.pa@axåäöis.se"
         };
-
-        Pattern pattern = Pattern.compile("^(.{2,})@(.{2,})\\.([A-Za-z]{2,})$");
+        // only A-Z, a-z, 0-9 and  . _ -  allowed
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]{2,}@([A-Za-z0-9+_.-]{2,})\\.([A-Za-z]{2,})$");
         for (String s : email) {
             Matcher m = pattern.matcher(s);
             System.out.println(s + " ------ " + (m.matches() ? "Valid" : "Invalid"));
